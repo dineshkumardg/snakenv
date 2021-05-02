@@ -23,7 +23,6 @@ def main(env_name, not_create,command):
         env_data = dotenv_values(env_file)
         for key, value in env_data.items():
             add_to_global(key, value)
-            print(f"[snakenv] {key} -> {value}")
         os.system(command)
     else:
         if not not_create:

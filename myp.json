@@ -1,0 +1,29 @@
+{
+    "author": "yunisdev",
+    "author_email": "yunisdev.04@gmail.com",
+    "config": {},
+    "dependencies": {
+        "common": [
+            "python-dotenv",
+            "click"
+        ],
+        "dev": [],
+        "prod": []
+    },
+    "description": "Use env variables in python",
+    "environment": "",
+    "name": "snakenv",
+    "scripts": {
+        "deploy": {
+            "command": "python -m twine upload --skip-existing --repository-url https://upload.pypi.org/legacy/ dist/*",
+            "description": "Upload to PYPI"
+        },
+        "predeploy": {
+            "command": "python setup.py sdist bdist_wheel",
+            "description": "Build package"
+        }
+    },
+    "url": "https://github.com/yunisdev/snakenv",
+    "use_environment": true,
+    "version": "1.1.8"
+}
