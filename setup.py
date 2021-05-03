@@ -25,5 +25,9 @@ setuptools.setup(
     ],
     install_requires=myp.get_dependencies("prod"),
     setup_requires=myp.get_dependencies("prod"),
-    python_requires='>=3.6'
+    python_requires='>=3.6',
+    entry_points='''
+        [console_scripts]
+        snakenv=snakenv.__main__:cli
+    ''',
 )
