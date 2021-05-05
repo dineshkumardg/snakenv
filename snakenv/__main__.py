@@ -1,4 +1,6 @@
 import os
+import subprocess
+from symbol import subscript
 import click
 from os.path import isfile
 from dotenv import dotenv_values
@@ -23,7 +25,7 @@ def main(env_name, not_create,command):
         env_data = dotenv_values(env_file)
         for key, value in env_data.items():
             add_to_global(key, value)
-        os.system(command)
+        subprocess.run(command.split())
     else:
         if not not_create:
             with open(env_file, "w") as f:
